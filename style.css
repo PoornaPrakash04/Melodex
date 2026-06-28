@@ -1,0 +1,172 @@
+/* ==============================
+   Album Finder — Global Styles
+   ============================== */
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF2BD;
+  font-family: 'Inter', sans-serif;
+  color: #191b22;
+}
+
+/* Glass effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Album card hover lift */
+.album-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.album-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(31, 41, 55, 0.1);
+}
+
+/* Filter button states */
+.filter-btn {
+  background: rgba(255, 255, 255, 0.5);
+  color: #434653;
+}
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+.filter-btn.active-filter {
+  background: #0043ad;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 67, 173, 0.25);
+}
+
+/* Sort dropdown */
+#sort-dropdown {
+  animation: fadeIn 0.15s ease;
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Album type badge */
+.type-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #0043ad;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Favorite heart button */
+.fav-btn {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.fav-btn:hover {
+  transform: scale(1.25);
+}
+.fav-btn.is-favorited .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  color: #e11d48;
+}
+
+/* Suggestion item */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Recent chip */
+.recent-chip {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #434653;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.recent-chip:hover {
+  background: #0043ad;
+  color: white;
+  border-color: #0043ad;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-animate {
+  animation: cardIn 0.3s ease forwards;
+}
+
+/* Spotify green button */
+.btn-spotify {
+  background: #1DB954;
+  color: white;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: filter 0.2s ease, transform 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+.btn-spotify:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+.btn-spotify:active {
+  transform: scale(0.97);
+}
+
+/* Scrollbar (optional polish) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,67,173,0.2); border-radius: 99px; }
